@@ -398,32 +398,13 @@ footer .socials a:hover {
 .button {
   padding: 20px 67px;
   font-family: 'Aleo';
-  overflow: hidden;
-  position: relative;
   z-index: 30;
-  background-image: -webkit-linear-gradient(30deg, #496bfe 50%, transparent 50%);
-  background-image: linear-gradient(30deg, #496bfe 50%, transparent 50%);
-  background-size: 700px;
-  background-repeat: no-repeat;
-  background-position: 100%;
-  -webkit-transition: background 800ms ease-in-out;
-  transition: background 800ms ease-in-out;
+  background-color: #5474fd;
+  color: #ffffff;
 }
 .button:hover {
-  background-position: 0%;
-}
-.button span {
-  z-index: 100;
-}
-.button::after {
-  content: '';
-  top: 0;
-  left: 0;
-  background-color: #5474fd;
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  z-index: -1;
+  background-color: #ffffff;
+  color: #5474fd;
 }
 @media screen and (max-width: 1024px) {
   .choose_section .flex .pic_wrap .pic2 {
