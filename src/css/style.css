@@ -97,6 +97,30 @@ header .search-field input {
 header .search-field input:focus {
   border-left: 5px solid #5474fd;
 }
+header .search-field input::-webkit-input-placeholder {
+  font-size: 14px;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  color: #999999;
+}
+header .search-field input::-moz-placeholder {
+  font-size: 14px;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  color: #999999;
+}
+header .search-field input:-ms-input-placeholder {
+  font-size: 14px;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  color: #999999;
+}
+header .search-field input::-ms-input-placeholder {
+  font-size: 14px;
+  letter-spacing: 2px;
+  word-spacing: 5px;
+  color: #999999;
+}
 header .search-field input::placeholder {
   font-size: 14px;
   letter-spacing: 2px;
@@ -130,6 +154,7 @@ header .scroll a:hover {
 }
 #nav.sticky {
   opacity: 0.8;
+  -webkit-backdrop-filter: blur(2px);
   backdrop-filter: blur(2px);
   position: fixed;
   top: 0;
@@ -242,6 +267,8 @@ header .scroll a:hover {
 .choose_section .flex .pic_wrap .pic2 img {
   display: block;
   width: 100%;
+  -o-object-fit: cover;
+  object-fit: cover;
 }
 .choose_section .explore {
   padding: 20px 48px;
@@ -289,6 +316,7 @@ header .scroll a:hover {
 .review .fullsize {
   display: block;
   width: 100%;
+  -o-object-fit: cover;
   object-fit: cover;
 }
 .review h2 {

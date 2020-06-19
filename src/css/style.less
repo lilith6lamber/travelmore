@@ -104,6 +104,30 @@ header {
             &:focus {
                 border-left: 5px solid @main;
             }
+            &::-webkit-input-placeholder {
+                font-size: 14px;
+                letter-spacing: 2px;
+                word-spacing: 5px;
+                color: #999999;
+            }
+            &::-moz-placeholder {
+                font-size: 14px;
+                letter-spacing: 2px;
+                word-spacing: 5px;
+                color: #999999;
+            }
+            &:-ms-input-placeholder {
+                font-size: 14px;
+                letter-spacing: 2px;
+                word-spacing: 5px;
+                color: #999999;
+            }
+            &::-ms-input-placeholder {
+                font-size: 14px;
+                letter-spacing: 2px;
+                word-spacing: 5px;
+                color: #999999;
+            }
             &::placeholder {
                 font-size: 14px;
                 letter-spacing: 2px;
@@ -140,7 +164,8 @@ header {
     position: relative;
     &.sticky {
         opacity: .8;
-        backdrop-filter: blur(2px);
+        -webkit-backdrop-filter: blur(2px);
+                backdrop-filter: blur(2px);
         position: fixed;
         top: 0;
         width: 100%;
@@ -250,6 +275,8 @@ header {
             .pic1 img, .pic2 img {
                 display: block;
                 width: 100%;
+                -o-object-fit: cover;
+                object-fit: cover;
             }
         }
     }
@@ -301,7 +328,8 @@ header {
     .fullsize {
         display: block;
         width: 100%;
-        object-fit: cover;
+        -o-object-fit: cover;
+           object-fit: cover;
     }
     h2 {
         padding-bottom: 95px;
