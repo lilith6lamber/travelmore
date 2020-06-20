@@ -1,6 +1,7 @@
 @white: #ffffff;
 @main: #5474fd;
 @main_dark: #3c54bd;
+@btnhover: #496bfe;
 @like: #00a2ff;
 @search: #5474fd;
 @select: #ff6363;
@@ -74,6 +75,9 @@ header {
     }
     .search-field {
         display: inline-flex;
+        width: 90%;
+        max-width: 650px;
+        margin: 0 auto;
         .search-btn {
             background-color: @main;
             letter-spacing: 1px;
@@ -286,9 +290,8 @@ header {
 }
 .steps {
     padding: 100px 0 110px;
-    background: url('../img/steps.jpg') no-repeat;
-    background-position: center center;
-    background-size: cover;
+    background-color: @brown;
+    position: relative;
     .steps_list {
         display: flex;
         flex-wrap: nowrap;
@@ -299,6 +302,37 @@ header {
             display: flex;
             flex-direction: column;
             align-items: center;
+            &.dotsleft {
+                position: relative;
+                &::after {
+                    content: '';
+                    background: url(../img/dots.png) no-repeat;
+                    background-position: center top;
+                    width: 424px;
+                    height: 100px;
+                    transform: rotate(5deg);
+                    top: -66px;
+                    left: 79px;
+                    position: absolute;
+                    overflow: hidden;
+                }
+            }
+            &.dotsright {
+                position: relative;
+                &::after {
+                    content: '';
+                    background: url(../img/dots.png) no-repeat;
+                    background-position: center top;
+                    width: 424px;
+                    height: 100px;
+                    /* transform: rotate(5deg); */
+                    top: -66px;
+                    /* left: 79px; */
+                    right: 79px;
+                    position: absolute;
+                    overflow: hidden;
+                }
+            }
             p {
                 font-family: @aleo;
                 font-size: 36px;
@@ -367,9 +401,6 @@ header {
 .spain {
     padding: 230px 0 100px;
     background-size: cover;
-    .button {
-        top: 10px;
-    }
     &.first {
         background-image: url('../img/section2.jpg');
     }
@@ -383,7 +414,7 @@ header {
             justify-content: flex-end;
         }
         .offer {
-            padding: 45px 30px 81px 30px;
+            padding: 45px 30px 65px 30px;
             margin-left: 10px;
             width: calc(50% - 20px);
             background-color: rgba(35, 35, 35, 0.9);
@@ -441,12 +472,68 @@ footer {
 .button {
     padding: 20px 67px;
     font-family: @aleo;
+    position: relative;
     z-index: 30;
     background-color: @main;
     color: @white;
-    &:hover {
-        background-color: @white;
-        color: @main;
+    overflow: hidden;
+    &:hover::before {
+        width: 350px;
+    }
+    &::before {
+        content: '';
+        background-color: @btnhover;
+        position: absolute;
+        width: 133px;
+        left: -12px;
+        height: 100px;
+        z-index: -1;
+        top: 0;
+        transform: skewX(55deg);
+        transition: all, .8s ease-in;
+    }
+    span {
+        z-index: 999999;
+    }
+}
+@media screen and (max-width:1200px) {
+    .steps {
+        .steps_list {
+            li {
+                &.dotsleft {
+                    &::after {
+                        width: 350px;
+                        height: 100px;
+                    }
+                }
+                &.dotsright {
+                    &::after {
+                        width: 350px;
+                        height: 100px;
+                    }
+                }
+            }
+        }
+    }
+}
+@media screen and (max-width:1110px) {
+    .steps {
+        .steps_list {
+            li {
+                &.dotsleft {
+                    &::after {
+                        width: 280px;
+                        height: 100px;
+                    }
+                }
+                &.dotsright {
+                    &::after {
+                        width: 280px;
+                        height: 100px;
+                    }
+                }
+            }
+        }
     }
 }
 @media screen and (max-width:1024px) {
@@ -471,6 +558,26 @@ footer {
     }
     .spain {
         padding: 100px 0;
+    }
+}
+@media screen and (max-width:800px) {
+    .steps {
+        .steps_list {
+            li {
+                &.dotsleft {
+                    &::after {
+                        width: 240px;
+                        height: 100px;
+                    }
+                }
+                &.dotsright {
+                    &::after {
+                        width: 240px;
+                        height: 100px;
+                    }
+                }
+            }
+        }
     }
 }
 @media screen and (max-width:768px) {
@@ -570,6 +677,16 @@ footer {
         .steps_list {
             justify-content: space-evenly;
             li {
+                &.dotsleft {
+                    &::after {
+                    display: none;
+                    }
+                }
+                &.dotsright {
+                    &::after {
+                        display: none;
+                    }
+                }
                 i {
                     font-size: 40px;
                 }
@@ -633,7 +750,6 @@ footer {
         }
     }
     .steps {
-        background: @brown;
         .steps_list {
             display: block;
             li {

@@ -65,6 +65,9 @@ header i {
 }
 header .search-field {
   display: inline-flex;
+  width: 90%;
+  max-width: 650px;
+  margin: 0 auto;
 }
 header .search-field .search-btn {
   background-color: #5474fd;
@@ -275,9 +278,8 @@ header .scroll a:hover {
 }
 .steps {
   padding: 100px 0 110px;
-  background: url('../img/steps.jpg') no-repeat;
-  background-position: center center;
-  background-size: cover;
+  background-color: #333333;
+  position: relative;
 }
 .steps .steps_list {
   display: flex;
@@ -290,6 +292,37 @@ header .scroll a:hover {
   display: flex;
   flex-direction: column;
   align-items: center;
+}
+.steps .steps_list li.dotsleft {
+  position: relative;
+}
+.steps .steps_list li.dotsleft::after {
+  content: '';
+  background: url(../img/dots.png) no-repeat;
+  background-position: center top;
+  width: 424px;
+  height: 100px;
+  transform: rotate(5deg);
+  top: -66px;
+  left: 79px;
+  position: absolute;
+  overflow: hidden;
+}
+.steps .steps_list li.dotsright {
+  position: relative;
+}
+.steps .steps_list li.dotsright::after {
+  content: '';
+  background: url(../img/dots.png) no-repeat;
+  background-position: center top;
+  width: 424px;
+  height: 100px;
+  /* transform: rotate(5deg); */
+  top: -66px;
+  /* left: 79px; */
+  right: 79px;
+  position: absolute;
+  overflow: hidden;
 }
 .steps .steps_list li p {
   font-family: 'Aleo';
@@ -354,9 +387,6 @@ header .scroll a:hover {
   padding: 230px 0 100px;
   background-size: cover;
 }
-.spain .button {
-  top: 10px;
-}
 .spain.first {
   background-image: url('../img/section2.jpg');
 }
@@ -371,7 +401,7 @@ header .scroll a:hover {
   justify-content: flex-end;
 }
 .spain .block_wrap .offer {
-  padding: 45px 30px 81px 30px;
+  padding: 45px 30px 65px 30px;
   margin-left: 10px;
   width: calc(50% - 20px);
   background-color: rgba(35, 35, 35, 0.9);
@@ -426,13 +456,49 @@ footer .socials a:hover {
 .button {
   padding: 20px 67px;
   font-family: 'Aleo';
+  position: relative;
   z-index: 30;
   background-color: #5474fd;
   color: #ffffff;
+  overflow: hidden;
 }
-.button:hover {
-  background-color: #ffffff;
-  color: #5474fd;
+.button:hover::before {
+  width: 350px;
+}
+.button::before {
+  content: '';
+  background-color: #496bfe;
+  position: absolute;
+  width: 133px;
+  left: -12px;
+  height: 100px;
+  z-index: -1;
+  top: 0;
+  transform: skewX(55deg);
+  transition: all, 0.8s ease-in;
+}
+.button span {
+  z-index: 999999;
+}
+@media screen and (max-width: 1200px) {
+  .steps .steps_list li.dotsleft::after {
+    width: 350px;
+    height: 100px;
+  }
+  .steps .steps_list li.dotsright::after {
+    width: 350px;
+    height: 100px;
+  }
+}
+@media screen and (max-width: 1110px) {
+  .steps .steps_list li.dotsleft::after {
+    width: 280px;
+    height: 100px;
+  }
+  .steps .steps_list li.dotsright::after {
+    width: 280px;
+    height: 100px;
+  }
 }
 @media screen and (max-width: 1024px) {
   .choose_section .flex .pic_wrap .pic2 {
@@ -454,6 +520,16 @@ footer .socials a:hover {
   }
   .spain {
     padding: 100px 0;
+  }
+}
+@media screen and (max-width: 800px) {
+  .steps .steps_list li.dotsleft::after {
+    width: 240px;
+    height: 100px;
+  }
+  .steps .steps_list li.dotsright::after {
+    width: 240px;
+    height: 100px;
   }
 }
 @media screen and (max-width: 768px) {
@@ -550,6 +626,12 @@ footer .socials a:hover {
   .steps .steps_list {
     justify-content: space-evenly;
   }
+  .steps .steps_list li.dotsleft::after {
+    display: none;
+  }
+  .steps .steps_list li.dotsright::after {
+    display: none;
+  }
   .steps .steps_list li i {
     font-size: 40px;
   }
@@ -602,9 +684,6 @@ footer .socials a:hover {
   .choose_section .flex .pic_wrap .pic2 {
     width: 100%;
     margin: 5px 0;
-  }
-  .steps {
-    background: #333333;
   }
   .steps .steps_list {
     display: block;
