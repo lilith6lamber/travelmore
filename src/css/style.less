@@ -581,6 +581,10 @@ footer {
     }
 }
 @media screen and (max-width:768px) {
+    header {
+        background: url('../img/firstscreen-sm.jpg') no-repeat;
+        background-size: cover;
+    }
     #nav{
         .logo-link {
             width: 50%;
@@ -646,28 +650,32 @@ footer {
         }
     }
            
-    .choose_section .flex {
-        flex-wrap: wrap;
-        .choose_us 
-        h2 {
-            padding-top: 0;
-        }
-    .choose_us, .pic_wrap {
-        width: 100%;
-        flex-wrap: wrap;
-        flex-direction: row;
-        align-items: center;
-        justify-content: center;
-        }
-        .pic_wrap {
-            padding: 0;
-            margin-top: 30px;
-            justify-content: space-between;
-            .pic1, .pic2 {
-                width: calc(50% - 30px);
-                margin: 0 15px;
-                img {
-                    border: 3px solid @main_dark;
+    .choose_section {
+        background: url('../img/section1-sm.jpg') no-repeat;
+        background-size: cover;
+        .flex {
+            flex-wrap: wrap;
+            .choose_us 
+            h2 {
+                padding-top: 0;
+            }
+        .choose_us, .pic_wrap {
+            width: 100%;
+            flex-wrap: wrap;
+            flex-direction: row;
+            align-items: center;
+            justify-content: center;
+            }
+            .pic_wrap {
+                padding: 0;
+                margin-top: 30px;
+                justify-content: space-between;
+                .pic1, .pic2 {
+                    width: calc(50% - 30px);
+                    margin: 0 15px;
+                    img {
+                        border: 3px solid @main_dark;
+                    }
                 }
             }
         }
@@ -699,10 +707,24 @@ footer {
     .btnwrap {
         justify-content: center;
     }
-    .spain .block_wrap .offer {
-        width: 100%;
+    .spain 
+    {
+        background-size: cover;
+        &.first {
+            background-image: url('../img/section2-sm.jpg');
+        }
+        &.second {
+            background-image: url('../img/section3-sm.jpg');
+        }
+        .block_wrap {
+            .offer {
+                width: 100%;
+            }
+        }
     }
     .review {
+        background: url('../img/section4-sm.jpg') no-repeat;
+        background-size: cover;
         padding: 80px 0;
         .fullsize {
             display: none;
